@@ -1,5 +1,7 @@
-linear regression algorithm implemented in MATLAB and python
+linear regression algorithm implemented in MATLAB and python.
 
-Regression parameters are learned using a training set.
+Regression parameters are learned using gradient descent or normal equation.
 
-Performance is evaluated with a test set.
+Allows any (reasonable) number of features.
+
+Uses a training set to get parameters, and a test set to evaluate performance.
