@@ -40,14 +40,15 @@ X = X(test_rows+1:end,:); y = y(test_rows+1:end,:);%this is the training set
 %Compute mean and standard deviation, normalize X
 mu = mean(X); sigma = std(X);
 X = (X-repmat(mu,[size(X,1) 1]))./repmat(sigma,[size(X,1) 1]);
+X_test = (X_test-repmat(mu,[size(X_test,1) 1]))./repmat(sigma,[size(X_test,1) 1]);
 
 %Add intercept term to X
 X = [ones(size(X,1), 1) X];
+X_test = [ones(size(X_test,1), 1) X_test];
 
 % %using normal equation
 % theta = zeros(size(X,2), 1);
 % theta = pinv(X' * X) * X' * y;
-
 
 % Init Theta and Run Gradient Descent 
 theta = zeros(size(X,2), 1);
@@ -66,12 +67,20 @@ fprintf('Cost function start: %g\n',J_history(1));
 fprintf('Cost function end: %g\n',J_history(end));
 
 %use test set for prediction - using mean & stdev of entire set
-y_hat = [ones(size(X_test,1),1) (X_test-repmat(mu,[size(X_test,1) 1]))./repmat(sigma,[size(X_test,1) 1])]*theta;
+y_hat = X_test*theta;
+
+%Compute training set error
+J_train = computeCostMulti(X, y, theta);
+
+%Compute test set error
+J_test = computeCostMulti(X_test,y_test,theta);
 
 %print test set variable - actual and prediction
 fprintf('\nLinear fit:\n\n')
 fprintf('\ty\t\ty_hat\n');
 disp([y_test,y_hat]);
+disp(J_train);
+disp(J_test);
 
 %EOF
 
