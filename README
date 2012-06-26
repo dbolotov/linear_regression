@@ -1,1 +1,5 @@
-linear regression algorithm developed in MATLAB
+linear regression algorithm implemented in MATLAB and python
+
+Regression parameters are learned using a training set.
+
+Performance is evaluated with a test set.
