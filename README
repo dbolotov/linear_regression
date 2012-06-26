@@ -1,4 +1,4 @@
-linear regression algorithm implemented in MATLAB and python.
+Linear regression algorithm implemented in MATLAB and python.
 
 Regression parameters are learned using gradient descent or normal equation.
 
