@@ -1,4 +1,5 @@
-#!/opt/EPD/bin/python
+#!/usr/local/EPD/bin/python
+#/usr/bin/env python
 #Filename: lin_reg.py
 
 #perform simple linear regression using batch gradient descent on training and test sets 
@@ -7,6 +8,7 @@
 
 
 import numpy
+import matplotlib.pyplot as plt
 from numpy import mat, c_, array
 
 #Define functions
