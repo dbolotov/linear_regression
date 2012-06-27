@@ -3,12 +3,20 @@
 #perform simple linear regression, compute training and test error, predict on test set
 #code ported from linear_regression_script.m
 
-#system python shebang: /usr/bin/python
 
 import numpy
 from numpy import mat, c_
 
-#Input mut contain feature columns followed by dependent variable column at end
+#Define functions
+def gradientDescentMulti(X, y, theta, alpha, num_iters):
+	print alpha
+	return
+
+def computeCostMulti(X,y,theta):
+	print theta
+	return
+
+#Input must contain feature columns followed by dependent variable column at end
 data = numpy.loadtxt('simple_function_1.txt', delimiter=',')
 
 #gradient descent parameters
@@ -50,13 +58,19 @@ X_test = c_[numpy.ones(X_test.shape[0]), X_test]
 #Initialize theta and run gradient descent
 theta = mat(numpy.zeros((X.shape[1],1)))
 
+#theta,J_history = gradientDescentMulti(X,y,theta,alpha,num_iters)
+
 #Plot the GD convergence 
 
 #Display GD result
+print "Theta computed from gradient descent:\n",theta
 
 #Display cost function intial and end values
+print "Cost function start:\n"
+print "Cost function end:\n"
 
 #Use test set for prediction
+y_hat = X_test*theta
 
 #Compute training set error
 
@@ -65,38 +79,6 @@ theta = mat(numpy.zeros((X.shape[1],1)))
 #Print test set variable - actual and prediction
 
 #EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
