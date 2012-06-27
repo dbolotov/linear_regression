@@ -9,7 +9,7 @@
 
 import numpy
 import matplotlib.pyplot as plt
-from numpy import mat, c_, array
+from numpy import mat, c_,r_,array
 
 #Define functions
 def gradientDescentMulti(X, y, theta, alpha, num_iters):
@@ -70,6 +70,12 @@ theta = mat(numpy.zeros((X.shape[1],1)))
 theta,J_history = gradientDescentMulti(X,y,theta,alpha,num_iters)
 
 #Plot the GD convergence 
+plt.plot(r_[:num_iters],J_history)
+plt.xlabel('Iterations')
+plt.ylabel('Cost J')
+plt.title('Gradient Descent convergence plot')
+plt.show()
+
 #(not done)
 
 #Display GD result
