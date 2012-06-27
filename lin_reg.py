@@ -9,11 +9,13 @@ from numpy import mat, c_
 
 #Define functions
 def gradientDescentMulti(X, y, theta, alpha, num_iters):
-	J_history = 0.
+	m = y.shape[0]
+	J_history = mat(numpy.zeros((num_iters,1)))
 	return theta,J_history
 
 def computeCostMulti(X,y,theta):
-	J = 0.
+	m = y.shape[0]
+	J = 0.5/m * (numpy.transpose(X*theta - y))*(X*theta-y)
 	return J
 
 #Input must contain feature columns followed by dependent variable column at end
