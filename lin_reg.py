@@ -80,9 +80,9 @@ J_test = computeCostMulti(X_test,y_test,theta)
 
 #Print test set variable - actual and prediction
 print "Linear fit: actual vs. prediction\n"
-
-
-
+print c_[y_test,y_hat]
+print "Training set error: %f \n" % J_train
+print "Test set error: %f \n" % J_test
 #EOF
 
 
