@@ -9,12 +9,12 @@ from numpy import mat, c_
 
 #Define functions
 def gradientDescentMulti(X, y, theta, alpha, num_iters):
-	print alpha
-	return
+	J_history = 0.
+	return theta,J_history
 
 def computeCostMulti(X,y,theta):
-	print theta
-	return
+	J = 0.
+	return J
 
 #Input must contain feature columns followed by dependent variable column at end
 data = numpy.loadtxt('simple_function_1.txt', delimiter=',')
@@ -30,7 +30,7 @@ train_perc = 0.95
 X = mat(data[:,:2]) #import as matrix
 ###X = data[:,:2] #import as array
 
-y = mat(data[:,2])
+y = numpy.transpose(mat(data[:,2]))
 
 #split into training and test sets
 test_rows = int(round(X.shape[0] * (1 - train_perc))) #no. of rows in test set
@@ -38,7 +38,7 @@ X_test = X[:test_rows,:] #test set
 y_test = y[:test_rows] #test set
 
 X = X[test_rows:,:] #train set
-y = y[test_rows:] #train setl
+y = y[test_rows:] #train set
 
 
 #Use training set to learn regression parameters
@@ -58,7 +58,7 @@ X_test = c_[numpy.ones(X_test.shape[0]), X_test]
 #Initialize theta and run gradient descent
 theta = mat(numpy.zeros((X.shape[1],1)))
 
-#theta,J_history = gradientDescentMulti(X,y,theta,alpha,num_iters)
+theta,J_history = gradientDescentMulti(X,y,theta,alpha,num_iters)
 
 #Plot the GD convergence 
 
@@ -73,10 +73,15 @@ print "Cost function end:\n"
 y_hat = X_test*theta
 
 #Compute training set error
+J_train = computeCostMulti(X, y, theta)
 
 #Compute test set error
+J_test = computeCostMulti(X_test,y_test,theta)
 
 #Print test set variable - actual and prediction
+print "Linear fit: actual vs. prediction\n"
+
+
 
 #EOF
 
