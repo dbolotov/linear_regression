@@ -79,8 +79,8 @@ J_test = computeCostMulti(X_test,y_test,theta);
 fprintf('\nLinear fit:\n\n')
 fprintf('\ty\t\ty_hat\n');
 disp([y_test,y_hat]);
-disp(J_train);
-disp(J_test);
+fprintf('\nTraining set error: %g\n',J_train);
+fprintf('\nTest set error: %g\n',J_test);
 
 %EOF
 
