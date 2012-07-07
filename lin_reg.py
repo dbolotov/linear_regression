@@ -3,8 +3,16 @@
 #Filename: lin_reg.py
 
 #perform simple linear regression using batch gradient descent on training and test sets 
+
+#Overview:
+#take in a csv file (no header)
+#split into a training and test set
+#define regression parameters: learning rate, number of iterations
+#perform regression to get fitting parameters
+#plot gradient descent convergence
 #compute training and test error, predict on test set
-#code ported from linear_regression_script.m
+
+#code ported from linear_regression_script.m (based on Ex1 from ml-class.org)
 
 
 import numpy
@@ -27,12 +35,14 @@ def computeCostMulti(X,y,theta):
 	J = 0.5/m * (numpy.transpose(X*theta - y))*(X*theta-y)
 	return J
 
+#Linear regression script
+
 #Input must contain feature columns followed by dependent variable column at end
 data = numpy.loadtxt('simple_function_1.txt', delimiter=',')
 
 #gradient descent parameters
-alpha = 0.01
-num_iters = 1000
+alpha = 0.01 #learning rate
+num_iters = 1000 #number of iterations for gradient descent
 
 #percentage of data to use for training
 train_perc = 0.95
@@ -75,8 +85,6 @@ plt.xlabel('Iterations')
 plt.ylabel('Cost J')
 plt.title('Gradient Descent convergence plot')
 plt.show()
-
-#(not done)
 
 #Display GD result
 print "Theta computed from gradient descent:\n",theta
