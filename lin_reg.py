@@ -38,14 +38,14 @@ def computeCostMulti(X,y,theta):
 #Linear regression script
 
 #Input must contain feature columns followed by dependent variable column at end
-data = numpy.loadtxt('simple_function_1.txt', delimiter=',')
+data = numpy.loadtxt('housing_data.csv', delimiter=',')
 
 #gradient descent parameters
 alpha = 0.01 #learning rate
 num_iters = 1000 #number of iterations for gradient descent
 
 #percentage of data to use for training
-train_perc = 0.95
+train_perc = 0.75
 
 #separate input file into independent and dependent arrays
 X = mat(data[:,:2]) 
