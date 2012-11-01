@@ -13,12 +13,15 @@ Code based on Ex.1 of [ml-class.org](http://ml-class.org).
 
 ####Datasets used in development and testing
 [Housing Dataset](http://archive.ics.uci.edu/ml/datasets/Housing)
+
 [Parkinsons Telemonitoring Data Set](http://archive.ics.uci.edu/ml/datasets/Parkinsons+Telemonitoring)
 
 ####Files
-linear\_regression\_script.m: development script to perform regression.
+development regression script, in MATLAB: linear\_regression\_script.m
 
-linear\_regression.m: above script, in function form. Allows specification of learning parameters.
+Functional form of regression script (allows specification of parameters in function call): linear\_regression.m
 
-lin\_reg.py: python implementation of regression script.
+Python implementation of regression script: lin\_reg.py
+
+MATLAB functions used by main script and function: computeCostMulti.m, gradientDescentMulti.m
 
