@@ -17,9 +17,9 @@ Code based on Ex.1 of [ml-class.org](http://ml-class.org).
 [Parkinsons Telemonitoring Data Set](http://archive.ics.uci.edu/ml/datasets/Parkinsons+Telemonitoring)
 
 ####Files
-development regression script, in MATLAB: linear\_regression\_script.m
+MATLAB regression script: linear\_regression\_script.m
 
-Functional form of regression script (allows specification of parameters in function call): linear\_regression.m
+Functional form of script (allows specification of parameters in function call): linear\_regression.m
 
 Python implementation of regression script: lin\_reg.py
 
