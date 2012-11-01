@@ -14,8 +14,6 @@ Code based on Ex.1 of [ml-class.org](http://ml-class.org).
 ####Datasets used in development and testing
 [Housing Dataset](http://archive.ics.uci.edu/ml/datasets/Housing)
 
-[Parkinsons Telemonitoring Data Set](http://archive.ics.uci.edu/ml/datasets/Parkinsons+Telemonitoring)
-
 ####Files
 MATLAB regression script: linear\_regression\_script.m
 
